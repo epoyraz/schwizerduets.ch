@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>replit</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
 
-  <body>
-    <div class="container">
-      <form id="myForm">
-        <textarea
-          class="textarea"
-          id="myTextarea"
-          placeholder="Hier tippen..."
-          maxlength="300"
-        ></textarea>
-        <div id="charsLeft" class="inadicator">300 Zeichen übrig</div>
-        <button type="submit" class="button" id="submitButton">
-          Generieren
-        </button>
-        <div id="loadingSpinner" class="spinner"></div>
-      </form>
-      <audio id="myAudio" src="" controls></audio>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class="container1">
+
+    <textarea class="textarea" id="myTextarea" placeholder="Hier tippen..." maxlength="300"></textarea>
+    <div id="charsLeft" class="inadicator">300 Zeichen übrig</div>
+  </div>
+  <div class="container2">
+    <div>
+      <p class="label">Beispiel Texte</p>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <div>
+      <button type="submit" class="button" id="submitButton">
+        1
+      </button>
+      <button type="submit" class="button" id="submitButton">
+        2
+      </button>
+
+
+      <button type="submit" class="button" id="submitButton">
+        3
+      </button>
+    </div>
+  </div>
+
+  </div>
+  <div class="container3">
+    <button type="button" class="button" id="submitButton">
+      Generieren
+    </button>
+  </div>
+
+  <div class="container4">
+    <div id="loadingSpinner" class="spinner"></div>
+    <audio id="myAudio" src="" controls></audio>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>

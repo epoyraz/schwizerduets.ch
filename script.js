@@ -9,7 +9,7 @@ function updateCharactersLeft() {
   var inputLength = document.getElementById("myTextarea").value.length;
   var charsLeft = 300 - inputLength;
   document.getElementById("charsLeft").innerText =
-    charsLeft + " characters left";
+    charsLeft + " Zeichen übrig";
 }
 
 async function submitForm(event) {
