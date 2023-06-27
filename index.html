@@ -10,6 +10,9 @@
 </head>
 
 <body>
+  <div class="titelfeld">
+    <h2>Schwizerduets.ch</h2>
+  </div>
   <div class="container1">
 
     <textarea class="textarea" id="myTextarea" placeholder="Hier tippen..." maxlength="300"></textarea>
@@ -29,7 +32,7 @@
       <button type="button" class="button" id="sampleText3">
         3
       </button>
-      <button type="button" class="button" id="sampleText4">
+      <button type="button" class="button3" id="sampleText4">
         <i class="fa fa-trash-o"></i>
       </button>
     </div>
@@ -37,14 +40,16 @@
 
   </div>
   <div class="container3">
-    <button type="button" class="button" id="submitButton">
+    <button type="button" class="button2" id="submitButton">
       Generieren
     </button>
   </div>
 
   <div class="container4">
-    <div id="loadingSpinner" class="spinner"></div>
-    <audio id="myAudio" src="" controls></audio>
+    <div id="audio-player-container">
+      <div id="loadingSpinner" class="spinner"></div>
+      <audio id="myAudio" src="" controls></audio>
+    </div>
   </div>
   <script src="script.js"></script>
 </body>
