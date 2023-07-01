@@ -20,7 +20,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document
     .getElementById("sampleText4")
     .addEventListener("click", addSampleText);
+
+  document
+    .getElementById("downloadAudio")
+    .addEventListener("click", downloadAudio);
+
+  document.getElementById("myAudio").src =
+    "https://media.play.ht/full_-NZGyPQ8HkDXT2SBMoV7.mp3?generation=1688223722137842&alt=media";
 });
+
+function downloadAudio() {
+  var randomText = Math.random().toString(36).substring(5);
+
+  var audio = document.getElementById("myAudio");
+  var url = audio.src;
+  var a = document.createElement("a");
+  a.href = url;
+  a.click();
+}
 
 function addSampleText(event) {
   // check id of event target id
@@ -28,21 +45,33 @@ function addSampleText(event) {
   if (event.target.id === "sampleText1") {
     sampleText =
       "Grüezi! Künstliche Intelligenz kann nun auch Schwizerdütsch. Schreibe einen Text auf Hochdeutsch und generiere ein Audio auf Schwizerdütsch. Probiere es aus!";
+    document.getElementById("myAudio").src =
+      "https://media.play.ht/full_-NZGyPQ8HkDXT2SBMoV7.mp3?generation=1688223722137842&alt=media";
+    document.getElementById("downloadAudio").disabled = false;
   }
   if (event.target.id === "sampleText2") {
     sampleText =
       "Die SBB AG ist das grösste Unternehmen des öffentlichen Verkehrs in der Schweiz und eine der grössten Arbeitgeberinnen des Landes. Zu ihren Service-Public-Leistungen gehören der Personenverkehr und die Schieneninfrastruktur.";
+    document.getElementById("myAudio").src =
+      "https://media.play.ht/full_-NZH1YN3TLlfQzYkTnT4.mp3?generation=1688224808039674&alt=media";
+    document.getElementById("downloadAudio").disabled = false;
   }
   if (event.target.id === "sampleText3") {
     sampleText =
       "Die Geschichte von Heidi hat dazu beigetragen, die Vorstellung von den Schweizer Alpen als idyllischer und romantischer Kulisse zu prägen.";
+    document.getElementById("myAudio").src =
+      "https://media.play.ht/full_-NZH1gUMxXJ72-mN4fRr.mp3?generation=1688224845019514&alt=media";
+    document.getElementById("downloadAudio").disabled = false;
   }
-  if (event.target.id === "sampleText4") {
+  if (event.target.id === "sampleText4" || event.target.id === "trashIcon") {
     sampleText = "";
+    document.getElementById("sampleText4").disabled = true;
+    document.getElementById("downloadAudio").disabled = true;
+    document.getElementById("myAudio").removeAttribute("src");
   }
 
   document.getElementById("myTextarea").value = sampleText;
-  if (sampleText.length < 5) {
+  if (sampleText.length == 0) {
     document.getElementById("submitButton").disabled = true;
   } else {
     document.getElementById("submitButton").disabled = false;
@@ -52,6 +81,10 @@ function addSampleText(event) {
 }
 
 function updateCharactersLeft() {
+  if (document.getElementById("myTextarea").value.length > 0) {
+    document.getElementById("sampleText4").disabled = false;
+    document.getElementById("submitButton").disabled = false;
+  }
   var inputLength = document.getElementById("myTextarea").value.length;
   var charsLeft = 300 - inputLength;
   document.getElementById("charsLeft").innerText = charsLeft + " Zeichen übrig";
@@ -86,6 +119,7 @@ async function submitForm(event) {
     console.log(data);
     document.getElementById("myAudio").src = data.audioUrl;
     console.log(data.audioUrl);
+    document.getElementById("downloadAudio").disabled = false;
   } else {
   }
 }
