@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document
     .getElementById("myTextarea")
     .addEventListener("input", updateCharactersLeft);
+  document.getElementById("myTextarea").value =
+    "Grüezi! Künstliche Intelligenz kann nun auch Schwizerdütsch. Schreibe einen Text auf Hochdeutsch und generiere ein Audio auf Schwizerdütsch. Probiere es aus!";
+
   document.getElementById("submitButton").addEventListener("click", submitForm);
 
   document
@@ -22,19 +25,27 @@ function addSampleText(event) {
   // check id of event target id
   var sampleText = "";
   if (event.target.id === "sampleText1") {
-    sampleText = "Ich bin ein Schwizerdütsch Text";
+    sampleText =
+      "Grüezi! Künstliche Intelligenz kann nun auch Schwizerdütsch. Schreibe einen Text auf Hochdeutsch und generiere ein Audio auf Schwizerdütsch. Probiere es aus!";
   }
   if (event.target.id === "sampleText2") {
     sampleText =
-      "Das Netz ist unser Kernstück. Damit versorgen wir die Schweiz mit besonders leistungsfähigen und superschnellen Breitbandtechnologien. Und unser Netzausbau geht weiter: Bis Ende 2025 bauen wir die Glasfasernetz-Abdeckung in der Schweiz auf zwischen 50 und 55 Prozent aus und treiben parallel dazu den Mobilfunkausbau voran. Mit jährlichen Investitionen von 1,6 Mrd. Franken wollen wir unseren Kundinnen und Kunden eine herausragende Infrastruktur anbieten und leisten damit auch einen Beitrag zu einer wettbewerbsfähigen Schweiz.";
+      "Die SBB AG ist das grösste Unternehmen des öffentlichen Verkehrs in der Schweiz und eine der grössten Arbeitgeberinnen des Landes. Zu ihren Service-Public-Leistungen gehören der Personenverkehr und die Schieneninfrastruktur.";
   }
   if (event.target.id === "sampleText3") {
-    sampleText = "Ich bin ein dritter Schwizerdütsch Text";
+    sampleText =
+      "Die Geschichte von Heidi hat dazu beigetragen, die Vorstellung von den Schweizer Alpen als idyllischer und romantischer Kulisse zu prägen.";
   }
   if (event.target.id === "sampleText4") {
     sampleText = "";
   }
+
   document.getElementById("myTextarea").value = sampleText;
+  if (sampleText.length < 5) {
+    document.getElementById("submitButton").disabled = true;
+  } else {
+    document.getElementById("submitButton").disabled = false;
+  }
 }
 
 function updateCharactersLeft() {
