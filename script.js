@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   document.getElementById("myTextarea").value =
     "Grüezi! Künstliche Intelligenz kann nun auch Schwizerdütsch. Schreibe einen Text auf Hochdeutsch und generiere ein Audio auf Schwizerdütsch. Probiere es aus!";
 
+  updateCharactersLeft();
   document.getElementById("submitButton").addEventListener("click", submitForm);
 
   document
@@ -46,6 +47,8 @@ function addSampleText(event) {
   } else {
     document.getElementById("submitButton").disabled = false;
   }
+
+  updateCharactersLeft();
 }
 
 function updateCharactersLeft() {

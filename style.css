@@ -15,50 +15,62 @@ body {
 }
 
 .titelfeld {
-  min-width: 80%;
   border-radius: 8px;
-  color: #017aff;
+  color: #ee3030;
   text-align: center;
+  width: 80%;
+  max-width: 600px;
+  min-width: 200px;
 }
 
 .container1 {
-  min-width: 80%;
   padding: 10px;
   border-radius: 8px;
-  background-color: #e5f2ff;
-  color: #017aff;
+  background-color: #ffe5e5;
+  color: #ee3030;
   margin-bottom: 10px;
   font-size: 13px;
+  width: 80%;
+  max-width: 600px;
+  min-width: 200px;
 }
 
 .container2 {
   padding: 10px;
   border-radius: 8px;
-  background-color: #e5f2ff;
+  background-color: #ffe5e5;
   margin-bottom: 10px;
   width: 80%;
+  max-width: 600px;
+  min-width: 200px;
 }
 
 .container3 {
   padding: 10px;
   border-radius: 8px;
-  background-color: #e5f2ff;
+  background-color: #ffe5e5;
   margin-bottom: 10px;
   width: 80%;
+  max-width: 600px;
+  min-width: 200px;
 }
 
 .container4 {
   padding: 10px;
   border-radius: 8px;
-  background-color: #e5f2ff;
+  background-color: #ffe5e5;
   margin-bottom: 10px;
   width: 80%;
+  max-width: 600px;
+  min-width: 200px;
 }
 
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
+  left: 0;
   text-align: center;
+  margin-top: 50px;
   width: 100%;
 }
 
@@ -97,11 +109,11 @@ input:focus {
   height: 60px;
   padding: 10px;
   font-size: 16px;
-  color: #017aff;
+  color: #ee3030;
   background-color: #ffffff;
   text-align: center;
   cursor: pointer;
-  border: 2px solid #017aff;
+  border: 2px solid #ee3030;
   border-radius: 13px;
   font-weight: bold;
 }
@@ -112,11 +124,11 @@ input:focus {
   height: 60px;
   padding: 10px;
   font-size: 16px;
-  color: #017aff;
+  color: #ee3030;
   background-color: #ffffff;
   text-align: center;
   cursor: pointer;
-  border: 2px solid #017aff;
+  border: 2px solid #ee3030;
   border-radius: 13px;
   font-weight: bold;
   margin-left: auto;
@@ -129,8 +141,8 @@ input:focus {
   padding: 10px;
   font-size: 16px;
   color: #ffffff;
-  background-color: #3498db;
-  background: #017aff;
+  background-color: #ffe5e5;
+  background: #ee3030;
   text-align: center;
   cursor: pointer;
   border: none;
@@ -145,7 +157,7 @@ input:focus {
 }
 
 .button:hover {
-  background-color: #017aff;
+  background-color: #ee3030;
   color: #ffffff;
 }
 
@@ -154,18 +166,18 @@ audio::-webkit-media-controls-panel {
 }
 
 audio::-webkit-media-controls-current-time-display {
-  color: #017aff;
+  color: #ee3030;
 }
 
 audio::-webkit-media-controls-time-remaining-display {
-  color: #017aff;
+  color: #ee3030;
 }
 
 audio {
   background-color: #fff;
   border-radius: 13px;
   height: 60px;
-  border: 2px Solid #017aff;
+  border: 2px Solid #ee3030;
   width: 100%;
 }
 
@@ -177,7 +189,7 @@ button:disabled {
 .spinner {
   display: none;
   border: 6px solid #f3f3f3;
-  border-top: 6px solid #3498db;
+  border-top: 6px solid #ffe5e5;
   border-radius: 50%;
   width: 60px;
   height: 60px;
