@@ -166,6 +166,7 @@ audio {
   border-radius: 13px;
   height: 60px;
   border: 2px Solid #017aff;
+  width: 100%;
 }
 
 button:disabled {
