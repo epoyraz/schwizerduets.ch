@@ -99,16 +99,38 @@ async function submitForm(event) {
   document.getElementById("loadingSpinner").style.display = "block";
   document.getElementById("submitButton").disabled = true;
 
-  var response = await fetch(
-    "https://schwizerduetsch-backend-3mdmydlrkq-ew.a.run.app/generate",
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ text: textareaValue }),
-    }
-  );
+  if (
+    textareaValue ==
+    "Grüezi! Künstliche Intelligenz kann nun auch Schwizerdütsch. Schreibe einen Text auf Hochdeutsch und generiere ein Audio auf Schwizerdütsch. Probiere es aus!"
+  ) {
+    document.getElementById("myAudio").src =
+      "https://media.play.ht/full_-NZGyPQ8HkDXT2SBMoV7.mp3?generation=1688223722137842&alt=media";
+  } else if (
+    textareaValue ==
+    "Die SBB AG ist das grösste Unternehmen des öffentlichen Verkehrs in der Schweiz und eine der grössten Arbeitgeberinnen des Landes. Zu ihren Service-Public-Leistungen gehören der Personenverkehr und die Schieneninfrastruktur."
+  ) {
+    document.getElementById("myAudio").src =
+      "https://media.play.ht/full_-NZH1YN3TLlfQzYkTnT4.mp3?generation=1688224808039674&alt=media";
+    document.getElementById("downloadAudio").disabled = false;
+  } else if (
+    textareaValue ==
+    "Die Geschichte von Heidi hat dazu beigetragen, die Vorstellung von den Schweizer Alpen als idyllischer und romantischer Kulisse zu prägen."
+  ) {
+    document.getElementById("myAudio").src =
+      "https://media.play.ht/full_-NZH1gUMxXJ72-mN4fRr.mp3?generation=1688224845019514&alt=media";
+    document.getElementById("downloadAudio").disabled = false;
+  } else {
+    var response = await fetch(
+      "https://schwizerduetsch-backend-3mdmydlrkq-ew.a.run.app/generate",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: textareaValue }),
+      }
+    );
+  }
 
   // Hide spinner
   document.getElementById("loadingSpinner").style.display = "none";

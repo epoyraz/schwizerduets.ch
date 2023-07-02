@@ -6,6 +6,8 @@ WORKDIR /usr/share/nginx/html
 
 # Copy the HTML, CSS and JS files from your local file system to the docker image
 COPY index.html .
+COPY impressum.html .
+COPY schweiz.ico .
 COPY style.css .
 COPY script.js .
 
